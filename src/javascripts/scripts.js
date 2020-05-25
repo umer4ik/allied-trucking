@@ -60,6 +60,8 @@ $(document).ready(() => {
       }
     } else {
       form.removeClass('form--has-value');
+      form.removeClass('form--valid');
+      form.removeClass('form--invalid');
     }
   }
   handleBlurState();
