@@ -29,6 +29,18 @@
     transition: height 800ms 200ms $easing;
     background-size: cover;
 
+    &:nth-child(1) {
+      background-image: url('../images/bg1.png');
+    }
+
+    &:nth-child(2) {
+      background-image: url('../images/bg2.png');
+    }
+
+    &:nth-child(3) {
+      background-image: url('../images/bg3.png');
+    }
+
     &--show {
       background-position: 100% 100%;
       height: 100%;
