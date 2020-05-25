@@ -29,6 +29,19 @@ $(document).ready(() => {
   // form stuff
   const input = $('.input__field');
   const form = $('form');
+  const messageButton = $('.message-button');
+  const showMessageButton = () => messageButton.addClass('message-button--visible');
+  const hideMessageButton = () => messageButton.removeClass('message-button--visible');
+  const handlePageScroll = () => {
+    const inputRect = input.get(0).getBoundingClientRect();
+    if (inputRect.top - inputRect.height > window.innerHeight) {
+      showMessageButton();
+    } else {
+      hideMessageButton();
+    }
+  };
+  messageButton.on('click', () => input.focus());
+  $(window).on('scroll', handlePageScroll);
   const handleInputFocus = () => {
     $('.input').addClass('input__focus');
   };
@@ -52,18 +65,19 @@ $(document).ready(() => {
     if (val) {
       form.addClass('form--has-value');
       if (isEmail(val)) {
-        form.addClass('form--valid');
-        form.removeClass('form--invalid');
+        form
+          .addClass('form--valid')
+          .removeClass('form--invalid');
       } else {
-        form.removeClass('form--valid');
-        form.addClass('form--invalid');
+        form
+          .removeClass('form--valid')
+          .addClass('form--invalid');
       }
     } else {
-      form.removeClass('form--has-value');
-      form.removeClass('form--valid');
-      form.removeClass('form--invalid');
+      form.removeClass('form--has-value form--valid form--invalid');
     }
   }
+  handlePageScroll();
   handleBlurState();
   handleFormState();
   input.on('input', handleFormState);

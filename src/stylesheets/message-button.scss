@@ -1,0 +1,30 @@
+.message-button {
+  @include desktop {
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  position: fixed;
+  width: 57px;
+  height: 57px;
+  right: 30px;
+  bottom: 30px;
+  background-color: $red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 400ms $easing;
+
+  &--visible {
+    @include phone {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
