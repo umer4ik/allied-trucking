@@ -1,0 +1,162 @@
+.table-link {
+  display: flex;
+  // width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: attr(data-hover);
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translate(0, 100%);
+    transform-origin: 50% 100%;
+    transition: transform 0.4s $easing;
+    background-color: #fff;
+    background-color: #eb5c5c;
+    font-size: 11px;
+    line-height: 18px;
+    padding: 20px;
+
+    @include phone {
+      font-size: 10px;
+    }
+  }
+
+  &--with-hover:hover {
+    &::before {
+      transform: translate(0, 0);
+    }
+
+    .table-link__arrow {
+      left: calc(100% - 17px);
+      opacity: 1;
+
+      svg {
+        transform: scale(2);
+      }
+    }
+
+    .table-link__direction {
+      opacity: 0;
+    }
+
+    .table-link__text {
+      opacity: 0;
+    }
+  }
+
+  &--with-bg {
+    position: relative;
+
+    &::after {
+      content: '';
+      opacity: 0.3;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image: url('../images/cell-bg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+  }
+
+  &__text {
+    font-size: 11px;
+    line-height: 18px;
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.4s $easing;
+    margin-bottom: 13px;
+
+    @include phone {
+      font-size: 10px;
+      max-height: 70px;
+      overflow: hidden;
+    }
+
+    &--visible {
+      max-height: none;
+    }
+  }
+
+  &__footer {
+    position: relative;
+    font-size: 12px;
+    padding-left: 16px;
+    z-index: 2;
+
+    @include phone {
+      font-size: 10px;
+    }
+
+    &--no-arrow {
+      padding-left: 0;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.3;
+    transition: all 0.4s $easing;
+
+    svg path {
+      fill: #fff;
+    }
+  }
+
+  &__direction {
+    opacity: 0.3;
+    transition: opacity 0.4s $easing;
+  }
+
+  &__show-hide {
+    @include desktop {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    font-size: 10px;
+    color: #e45959;
+    margin-bottom: 13px;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      border: 3px solid transparent;
+      border-top: 3px solid #e45959;
+      margin-left: 3px;
+    }
+
+    &::before {
+      content: 'Show more';
+    }
+
+    &--show {
+      &::after {
+        transform: scaleY(-1) translateY(3px);
+      }
+
+      &::before {
+        content: 'Hide';
+      }
+    }
+  }
+}

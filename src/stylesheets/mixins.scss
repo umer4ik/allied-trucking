@@ -1,0 +1,28 @@
+$tablet-width: 768px;
+$desktop-width: 1366px;
+$easing: cubic-bezier(0.4, 0, 0, 1);
+$red: #e45959;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: #{$tablet-width - 1}) {
+    @content;
+  }
+}
+
+@mixin tablet-phone {
+  @media (max-width: #{$desktop-width - 1}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}

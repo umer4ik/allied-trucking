@@ -1,7 +1,12 @@
 // Load CSS Reset from NPM
-@import "~normalize.css";
-@import "fonts.scss";
-
-html {
-  font-family: sequel, sans-serif;
-}
+@import "setup.scss";
+@import "body.scss";
+@import "content.scss";
+@import "header.scss";
+@import "main.scss";
+@import "table.scss";
+@import "table-link.scss";
+@import "form.scss";
+@import "input.scss";
+@import "button.scss";
+@import "footer.scss";

@@ -1,0 +1,21 @@
+.main {
+  max-width: 1160px;
+  margin: 80px auto 0;
+  display: flex;
+
+  &__table {
+    flex-grow: 1;
+  }
+
+  &__stroke-image {
+    margin-left: 2px;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include phone {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  color: #fff;
+
+  @include phone {
+    display: block;
+
+    tbody {
+      display: block;
+    }
+
+    tr {
+      display: block;
+      width: 100%;
+    }
+
+    td {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__preheader {
+    td {
+      height: 20px;
+    }
+  }
+
+  td {
+    border: 1px solid #fff;
+    position: relative;
+  }
+
+  &__header-line-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__header-line {
+    max-width: 1158px;
+    overflow: hidden;
+    font-size: 65px;
+
+    @include phone {
+      font-size: 18px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #243646;
+    height: 100%;
+    width: 80px;
+    background-image: url('../images/table-logo.svg');
+    background-repeat: no-repeat;
+    background-position: 15px 10px;
+
+    @include phone {
+      width: 30px;
+      background-position: 10px 10px;
+      background-size: 12px 16px;
+    }
+  }
+
+  &__link-cell {
+    height: 183px;
+
+    &:nth-child(1) {
+      width: 279px;
+
+      @include phone {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(2) {
+      width: 488px;
+
+      @include phone {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(3) {
+      width: 216px;
+
+      @include phone {
+        width: 100%;
+      }
+    }
+
+    @include phone {
+      min-height: 72px;
+      height: auto;
+    }
+  }
+
+  &__dots {
+    td {
+      height: 29px;
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        left: #{20 + ($i - 1) * 72}px;
+
+        @include phone {
+          left: #{20 + ($i - 1) * 26}px;
+        }
+      }
+    }
+  }
+}

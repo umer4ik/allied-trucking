@@ -1,0 +1,109 @@
+.input {
+  position: relative;
+  font-size: 20px;
+
+  @include phone {
+    font-size: 12px;
+  }
+
+  &__field {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    padding-left: 224px;
+    color: #fff;
+    transition: padding-left 400ms $easing;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include phone {
+      padding-left: 137px;
+    }
+  }
+
+  &__label-content {
+    display: block;
+    transition: transform 400ms $easing;
+    position: relative;
+  }
+
+  &__label {
+    display: block;
+    position: absolute;
+    color: #fff;
+    pointer-events: none;
+    padding-right: 10px;
+    overflow: hidden;
+  }
+
+  &__label-red {
+    color: $red;
+  }
+
+  &__cursor {
+    display: inline-block;
+    height: 28px;
+    width: 1px;
+    background-color: #fff;
+    position: absolute;
+    right: -10px;
+    top: -3px;
+    animation: blink 600ms linear infinite alternate;
+  }
+
+  &__feedback {
+    font-size: 13px;
+    position: absolute;
+    left: 0;
+    bottom: -33px;
+    font-family: Roboto, sans-serif;
+    opacity: 0;
+    transition: opacity 400ms $easing;
+
+    &--valid {
+      color: #919aa2;
+
+      .form--valid.form--has-value & {
+        opacity: 1;
+      }
+    }
+
+    &--invalid {
+      color: $red;
+
+      .form--invalid.form--has-value & {
+        opacity: 1;
+      }
+    }
+
+    @include tablet-phone {
+      font-size: 10px;
+    }
+  }
+
+  &__focus {
+    .input__label-content {
+      transform: translate(-140px, 0);
+
+      @include phone {
+        transform: translate(-84px, 0);
+      }
+    }
+
+    .input__cursor {
+      display: none;
+    }
+
+    .input__field {
+      padding-left: 79px;
+
+      @include phone {
+        padding-left: 51px;
+      }
+    }
+  }
+}

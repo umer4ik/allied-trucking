@@ -4,8 +4,161 @@
     <meta charset="utf-8">
     <title>Static Site Boilerplate</title>
     <meta name="description" content="" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    asdfasdf
+  <div class="body">
+    <div class="loader">
+
+    </div>
+    <div class="content">
+      <div class="header">
+        <a class="header__logo" href="/"><img class="header__logo-image" src="images/logo.svg" alt="Allied Trucking"></a>
+        <div class="header__language-switch">
+          <a class="header__language-link header__language-link--active" href="#">EN</a> / <a class="header__language-link" href="#">FR</a>
+        </div>
+      </div>
+      <div class="main">
+        <div class="main__table">
+          <table class="table">
+            <tbody>
+              <tr class="table__preheader">
+                <td colspan="4"></td>
+              </tr>
+              <tr class="table__header">
+                <td colspan="4">
+                  <div class="table__header-line-wrapper">
+                    <div class="table__header-line marquee" id="marquee">ALLIED TRUCKING -&nbsp;ALLIED TRUCKING -&nbsp;ALLIED TRUCKING -&nbsp;ALLIED TRUCKING -&nbsp;</div>
+                    <div class="table__logo">
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__links">
+                <td class="table__link-cell">
+                  <a class="table-link table-link--with-bg table-link--with-hover" href="#" data-hover="Open in Google Maps">
+                    <div class="table-link__text">1405 Transcanada, Suite 310 Dorval, QC, H9P 2V9.</div>
+                    <div class="table-link__footer">
+                      <div class="table-link__arrow">
+                        <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.19856 1.26538L0.481715 1.26538L0.481715 0L9 7.03941e-07V1.26538H8.99774V8H7.65275V1.68678L0.951054 7.99178L0 7.09702L6.19856 1.26538Z" />
+                        </svg>
+                      </div>
+                      <div class="table-link__direction">Address</div>
+                    </div>
+                  </a>
+                </td>
+                <td class="table__link-cell">
+                  <div class="table-link">
+                    <div class="table-link__text">Allied Trucking is a transportation and logistics company headquartered in Montreal, Quebec. With offices across Canada and the United States, we pride ourselves in delivering excellent customer service and seamless transportation solutions for our clients every time.</div>
+                    <div class="table-link__show-hide"></div>
+                    <div class="table-link__footer table-link__footer--no-arrow">
+                      <div class="table-link__direction">About</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="table__link-cell">
+                  <a class="table-link table-link--with-hover" href="#" data-hover="Email us">
+                    <div class="table-link__text">sales@alliedtrucking.ca</div>
+                    <div class="table-link__footer">
+                      <div class="table-link__arrow">
+                        <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.19856 1.26538L0.481715 1.26538L0.481715 0L9 7.03941e-07V1.26538H8.99774V8H7.65275V1.68678L0.951054 7.99178L0 7.09702L6.19856 1.26538Z" />
+                        </svg>
+                      </div>
+                      <div class="table-link__direction">Email</div>
+                    </div>
+                  </a>
+                </td>
+                <td class="table__link-cell">
+                  <a class="table-link table-link--with-hover" href="#" data-hover="Call us">
+                    <div class="table-link__text">1-800-668-6850</div>
+                    <div class="table-link__footer">
+                      <div class="table-link__arrow">
+                        <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.19856 1.26538L0.481715 1.26538L0.481715 0L9 7.03941e-07V1.26538H8.99774V8H7.65275V1.68678L0.951054 7.99178L0 7.09702L6.19856 1.26538Z" />
+                        </svg>
+                      </div>
+                      <div class="table-link__direction">Phone</div>
+                    </div>
+                  </a>
+                </td>
+              </tr>
+              <tr class="table__dots">
+                <td colspan="4">
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                  <div class="table__dot"></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <img class="main__stroke-image" src="images/right-stroke.svg" alt="">
+      </div>
+      <form action="#" class="form" novalidate>
+        <div class="form__input-container">
+          <div class="input">
+            <label for="input" class="input__label">
+              <span class="input__label-content">
+                Enter your <span class="input__label-red">Email:</span>
+                <span class="input__cursor"></span>
+              </span>
+            </label>
+            <input type="email" class="input__field">
+            <div class="input__feedback input__feedback--invalid">Incorrect format</div>
+            <div class="input__feedback input__feedback--valid">We are currently in beta! Get notified when it’s ready for launch.</div>
+          </div>
+        </div>
+        <div class="form__buttons">
+          <button class="button">
+            <span class="button__content">
+              <span class="button__inner-circle">
+              </span>
+              <span class="button__text">Send</span>
+            </span>
+          </button>
+          <div class="form__button-decorator">
+            <div class="form__button-decorator-circle"></div>
+            <div class="form__button-decorator-circle"></div>
+            <div class="form__button-decorator-circle"></div>
+          </div>
+        </div>
+      </form>
+      <div class="footer">
+        <div class="footer__link-wrapper">
+          <div class="footer__link">
+            <div class="footer__link-text">© Allied Trucking 2020. All Rights Reserved</div>
+          </div>
+        </div>
+        <div class="footer__link-wrapper">
+          <div class="footer__link">
+            <div class="footer__link-text">Full website coming soon...</div>
+          </div>
+        </div>
+        <div class="footer__link-wrapper">
+          <a class="footer__link" href="#">
+            <div class="footer__link-text" data-text="Designed by HRVST">Designed by HRVST</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
