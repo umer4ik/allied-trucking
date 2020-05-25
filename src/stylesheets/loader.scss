@@ -7,4 +7,23 @@
   height: 100%;
   background-color: #8c87a2; // #eb5c5c #4f5e6a
   overflow: hidden;
+  animation: bg-colors 8s 4s 1 $easing forwards;
+}
+
+@keyframes bg-colors {
+  0% {
+    background-color: #8c87a2;
+  }
+
+  33% {
+    background-color: #eb5c5c;
+  }
+
+  66% {
+    background-color: #4f5e6a;
+  }
+
+  100% {
+    background-color: #4f5e6a;
+  }
 }

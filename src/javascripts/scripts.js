@@ -6,8 +6,71 @@ window.jQuery = $;
 window.$ = $;
 require('jquery.marquee');
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const animateIntro = async () => {
+  const textLayers = $('.intro__text-layer');
+  const bgLayers = $('.intro__bg-layer');
+  const slashes = $('.slash img');
+  const counter = $('.counter__progress');
+  const curtainsUp = async () => {
+    $('.progress-bar__part').addClass('progress-bar__part--hide');
+    await delay(800);
+    $('.loader').remove();
+    window.scrollTo(0, 0);
+  };
+  const interval = setInterval(() => {
+    counter.text(+counter.text() + 1);
+    if (counter.text() === '100') {
+      clearInterval(interval);
+      curtainsUp();
+    }
+  }, 10000 / 100);
+  let slashIndex = 0;
+  const showT = (index) => textLayers.eq(index).addClass('intro__text-layer--show');
+  const hideT = (index) => textLayers.eq(index).addClass('intro__text-layer--hide');
+  const showBg = (index) => bgLayers.eq(index).addClass('intro__bg-layer--show');
+  const hideBg = (index) => bgLayers.eq(index).addClass('intro__bg-layer--hide');
+  const showProgress = () => {
+    $('.progress-bar').addClass('progress-bar--show');
+    $('.counter').addClass('counter--show');
+  };
+  const showNextSlash = () => {
+    slashes.eq(slashIndex).addClass('show');
+    slashIndex += 1;
+  };
+  await delay(1000);
+  showProgress();
+  await delay(1000);
+  showT(0);
+  showBg(0);
+  showNextSlash();
+  await delay(2500);
+  hideBg(0);
+  hideT(0);
+  await delay(200);
+  showT(1);
+  showBg(1);
+  showNextSlash();
+  await delay(200);
+  showT(2);
+  await delay(2500);
+  hideT(1);
+  await delay(200);
+  hideT(2);
+  hideBg(1);
+  await delay(200);
+  showT(3);
+  showBg(2);
+  showNextSlash();
+  await delay(200);
+  showT(4);
+};
 
 $(document).ready(() => {
+  // loader stuff
+  animateIntro();
+
   $('.table__header-line-wrapper').css({
     width: $('.main__table').width() - 2,
   });

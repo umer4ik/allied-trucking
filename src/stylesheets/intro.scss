@@ -13,15 +13,33 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @include tablet-phone {
+      width: 192px;
+      height: 192px;
+    }
   }
 
   &__bg-layer {
     width: 100%;
-    height: 100%;
+    height: 0;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    background-image: url('../images/bg1.png');
+    transition: height 800ms 200ms $easing;
+    background-size: cover;
+
+    &--show {
+      background-position: 100% 100%;
+      height: 100%;
+    }
+
+    &--hide {
+      background-position: 0 0;
+      height: 0;
+      bottom: auto;
+      top: 0;
+    }
   }
 
   &__text {
@@ -34,5 +52,36 @@
     font-size: 65px;
     line-height: 76px;
     color: #fff;
+
+    @include tablet-phone {
+      font-size: 25px;
+      line-height: 1.2;
+    }
+  }
+
+  &__text-layer {
+    overflow: hidden;
+    height: 72px;
+
+    @include tablet-phone {
+      height: 32px;
+    }
+
+    div {
+      transform: translate(0, 100%);
+      transition: transform 1400ms $easing;
+    }
+
+    &--show {
+      div {
+        transform: translate(0, 0);
+      }
+    }
+
+    &--hide {
+      div {
+        transform: translate(0, -100%);
+      }
+    }
   }
 }

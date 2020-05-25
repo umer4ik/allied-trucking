@@ -5,4 +5,10 @@
   font-size: 11px;
   line-height: 13px;
   color: #fff;
+  transform: translate(0, 60px);
+  transition: transform 400ms $easing;
+
+  &--show {
+    transform: translate(0, 0);
+  }
 }

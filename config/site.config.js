@@ -9,13 +9,13 @@ if (!ROOT) {
 
 const config = {
   // Your website's name, used for favicon meta tags
-  site_name: 'Allied Trucking',
+  site_name: 'Static Site Boilerplate',
 
   // Your website's description, used for favicon meta tags
-  site_description: 'Allied Trucking',
+  site_description: 'A modern boilerplate for static website development',
 
   // Your website's URL, used for sitemap
-  site_url: 'https://project.local',
+  site_url: '',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',

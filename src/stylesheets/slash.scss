@@ -5,11 +5,21 @@
   margin-left: auto;
   margin-right: auto;
 
+  @include phone {
+    text-align: center;
+  }
+
   img {
     display: inline-block;
+    opacity: 0;
+    transition: opacity 400ms $easing;
 
     &:not(:first-child) {
       margin-left: -15px;
+    }
+
+    &.show {
+      opacity: 1;
     }
   }
 }
