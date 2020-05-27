@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
 
-  @include phone {
+  @include tablet-phone {
     padding-top: 23px;
   }
 }

@@ -74,7 +74,18 @@ $(document).ready(() => {
   $('.table__header-line-wrapper').css({
     width: $('.main__table').width() - 2,
   });
-  if ($(window).width() > 500) {
+  if ($(window).width() > 767) {
+    $('[data-marquee-trigger]').hover(
+      (e) => {
+        const index = $(e.currentTarget).attr('data-marquee-trigger');
+        $('[data-marquee]').removeClass('table__header-line--show');
+        $(`[data-marquee="${index}"]`).addClass('table__header-line--show');
+      },
+      () => {
+        $('[data-marquee]').removeClass('table__header-line--show');
+        $('[data-marquee="0"]').addClass('table__header-line--show');
+      },
+    );
     $('.marquee').marquee({
       duration: 15000,
       duplicated: true,
@@ -82,7 +93,7 @@ $(document).ready(() => {
       startVisible: true,
     });
   } else {
-    $('#marquee').text('ALLIED TRUCKING');
+    $('[data-marquee="0"]').text('ALLIED TRUCKING');
   }
   $('.table-link__show-hide').on('click', (e) => {
     $(e.currentTarget).toggleClass('table-link__show-hide--show');
@@ -96,17 +107,7 @@ $(document).ready(() => {
     }
   });
 
-  $('[data-marquee-trigger]').hover(
-    (e) => {
-      const index = $(e.currentTarget).attr('data-marquee-trigger');
-      $('[data-marquee]').removeClass('table__header-line--show');
-      $(`[data-marquee="${index}"]`).addClass('table__header-line--show');
-    },
-    () => {
-      $('[data-marquee]').removeClass('table__header-line--show');
-      $('[data-marquee="0"]').addClass('table__header-line--show');
-    },
-  );
+  
 
   // form stuff
   const input = $('.input__field');

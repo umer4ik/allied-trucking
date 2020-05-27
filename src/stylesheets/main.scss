@@ -4,14 +4,20 @@
   display: flex;
   flex-wrap: wrap;
 
-  @include phone {
+  @include tablet-phone {
     margin-top: 45px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   &__table {
     flex-grow: 1;
     padding-right: 10px;
     position: relative;
+
+    @include tablet-phone {
+      padding-right: 0;
+    }
   }
 
   &__stroke-image {
