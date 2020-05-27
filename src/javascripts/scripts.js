@@ -6,7 +6,7 @@ window.jQuery = $;
 window.$ = $;
 require('jquery.marquee');
 
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms / 2));
 
 const animateIntro = async () => {
   const textLayers = $('.intro__text-layer');
@@ -15,7 +15,7 @@ const animateIntro = async () => {
   const counter = $('.counter__progress');
   const curtainsUp = async () => {
     $('.progress-bar__part').addClass('progress-bar__part--hide');
-    await delay(800);
+    await delay(1400);
     $('.loader').remove();
     window.scrollTo(0, 0);
   };
@@ -25,7 +25,7 @@ const animateIntro = async () => {
       clearInterval(interval);
       curtainsUp();
     }
-  }, 10000 / 100);
+  }, 5000 / 100);
   let slashIndex = 0;
   const showT = (index) => textLayers.eq(index).addClass('intro__text-layer--show');
   const hideT = (index) => textLayers.eq(index).addClass('intro__text-layer--hide');
@@ -74,8 +74,8 @@ $(document).ready(() => {
   $('.table__header-line-wrapper').css({
     width: $('.main__table').width() - 2,
   });
-  if ($(window).width() > 768) {
-    $('#marquee').marquee({
+  if ($(window).width() > 500) {
+    $('.marquee').marquee({
       duration: 15000,
       duplicated: true,
       gap: 0,
@@ -86,8 +86,27 @@ $(document).ready(() => {
   }
   $('.table-link__show-hide').on('click', (e) => {
     $(e.currentTarget).toggleClass('table-link__show-hide--show');
+    $(e.currentTarget).closest('.table-link').toggleClass('table-link--mobile-hover');
     $(e.currentTarget).prev().toggleClass('table-link__text--visible');
+    if ($(e.currentTarget).hasClass('table-link__show-hide--show')) {
+      const text = 'About'; // $(e.currentTarget).parent().find('.table-link__footer').text();
+      $('.table__header-line').text(text);
+    } else {
+      $('.table__header-line').text('ALLIED TRUCKING');
+    }
   });
+
+  $('[data-marquee-trigger]').hover(
+    (e) => {
+      const index = $(e.currentTarget).attr('data-marquee-trigger');
+      $('[data-marquee]').removeClass('table__header-line--show');
+      $(`[data-marquee="${index}"]`).addClass('table__header-line--show');
+    },
+    () => {
+      $('[data-marquee]').removeClass('table__header-line--show');
+      $('[data-marquee="0"]').addClass('table__header-line--show');
+    },
+  );
 
   // form stuff
   const input = $('.input__field');

@@ -1,9 +1,8 @@
-@import "mixins.scss";
-
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 
   &__logo-image {
     @include phone {

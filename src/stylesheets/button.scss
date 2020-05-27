@@ -49,6 +49,7 @@
   .form--valid & {
     .button__content {
       background-color: $red;
+      color: #fff;
     }
 
     &:hover .button__content {

@@ -17,7 +17,7 @@
     top: 0;
     width: 33.33%;
     background-color: #fff;
-    transition: transform 2s $easing;
+    transition: transform 1500ms $easing;
 
     &--hide {
       transform: translate(0, -133%);
@@ -26,20 +26,20 @@
     &:nth-child(1) {
       left: 0;
       background-color: #bab7c8;
-      animation: progress-1 8s 4s 1 $easing forwards;
+      animation: progress-1 6s 2s 1 $easing forwards;
     }
 
     &:nth-child(2) {
       left: 33.33%;
       background-color: #d1cfd9;
-      animation: progress-2 8s 4s 1 $easing forwards;
+      animation: progress-2 6s 2s 1 $easing forwards;
       transition-delay: 200ms;
     }
 
     &:nth-child(3) {
       left: 66.66%;
       background-color: #e9e7ec;
-      animation: progress-3 8s 4s 1 $easing forwards;
+      animation: progress-3 6s 2s 1 $easing forwards;
       transition-delay: 400ms;
     }
   }

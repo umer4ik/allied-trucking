@@ -55,6 +55,28 @@
     }
   }
 
+  &--mobile-hover {
+    @include phone {
+      &::before {
+        transform: translate(0, 0);
+        z-index: 1;
+      }
+
+      .table-link__show-hide--show {
+        color: #fff;
+        position: relative;
+        display: block;
+        z-index: 2;
+
+        &::after {
+          content: '';
+          border: 3px solid transparent;
+          border-top: 3px solid #fff;
+        }
+      }
+    }
+  }
+
   &--with-bg {
     position: relative;
 

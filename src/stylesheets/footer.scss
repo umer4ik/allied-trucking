@@ -1,11 +1,16 @@
 .footer {
   display: flex;
   font-size: 11px;
-  margin-top: auto;
+  width: 100%;
 
-  @include tablet-phone {
+  @include tablet {
     flex-direction: column;
     margin-top: 15px;
+  }
+
+  @include phone {
+    flex-direction: column;
+    margin-top: 40px;
   }
 
   &__link-wrapper {
