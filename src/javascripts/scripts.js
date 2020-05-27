@@ -107,8 +107,6 @@ $(document).ready(() => {
     }
   });
 
-  
-
   // form stuff
   const input = $('.input__field');
   const form = $('form');
