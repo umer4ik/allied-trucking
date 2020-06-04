@@ -63,10 +63,10 @@
     font-family: Roboto, sans-serif;
     opacity: 0;
     transition: opacity 400ms $easing;
+    color: #919aa2;
+    pointer-events: none;
 
     &--valid {
-      color: #919aa2;
-
       .form--valid.form--has-value & {
         opacity: 1;
       }
@@ -76,6 +76,12 @@
       color: $red;
 
       .form--invalid.form--has-value & {
+        opacity: 1;
+      }
+    }
+
+    &--submitted {
+      .form--submitted & {
         opacity: 1;
       }
     }

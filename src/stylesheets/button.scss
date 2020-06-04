@@ -55,6 +55,10 @@
     &:hover .button__content {
       transform: scale(0.9);
     }
+
+    .button__inner-circle {
+      border-color: #fff;
+    }
   }
 
   .form--has-value.form--invalid & {

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Static Site Boilerplate</title>
+    <title data-title="ALLIED TRUCKING">ALLIED TRUCKING</title>
     <meta name="description" content="" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
@@ -102,7 +102,7 @@
                   </div>
                 </td>
                 <td class="table__link-cell">
-                  <a class="table-link table-link--with-hover" href="#" data-hover="Email us" data-marquee-trigger="2">
+                  <a class="table-link table-link--with-hover" href="mailto:sales@alliedtrucking.ca" data-hover="Email us" data-marquee-trigger="2">
                     <div class="table-link__text">sales@alliedtrucking.ca</div>
                     <div class="table-link__footer">
                       <div class="table-link__arrow">
@@ -115,7 +115,7 @@
                   </a>
                 </td>
                 <td class="table__link-cell">
-                  <a class="table-link table-link--with-hover" href="#" data-hover="Call us" data-marquee-trigger="3">
+                  <a class="table-link table-link--with-hover" href="tel:+18006686850" data-hover="Call us" data-marquee-trigger="3">
                     <div class="table-link__text">1-800-668-6850</div>
                     <div class="table-link__footer">
                       <div class="table-link__arrow">
@@ -166,15 +166,15 @@
                 </span>
               </label>
               <input type="email" class="input__field">
-              <div class="input__feedback input__feedback--invalid">Incorrect format</div>
-              <div class="input__feedback input__feedback--valid">We are currently in beta! Get notified when it’s ready for launch.</div>
+              <div class="input__feedback input__feedback--invalid">Incorrect format.</div>
+              <div class="input__feedback input__feedback--valid">That’s it! Now hit the send button and we’ll get you into our mailing list.</div>
+              <div class="input__feedback input__feedback--submitted">Thank you!</div>
             </div>
           </div>
           <div class="form__buttons">
             <button class="button">
               <span class="button__content">
-                <span class="button__inner-circle">
-                </span>
+                <span class="button__inner-circle"></span>
                 <span class="button__text">Send</span>
               </span>
             </button>
@@ -199,7 +199,7 @@
           </div>
         </div>
         <div class="footer__link-wrapper">
-          <a class="footer__link" href="#">
+          <a class="footer__link" href="https://gohrvst.com/" target="_blank">
             <div class="footer__link-text" data-text="Designed by HRVST">Designed by HRVST</div>
           </a>
         </div>
@@ -209,5 +209,15 @@
       <img src="images/envelope.svg" alt="" class="message-button__icon">
     </div>
   </div>
+  <div class="thanks modal">
+    <div class="thanks__title">Thank you!</div>
+    <div class="thanks__description">Your Email is at our mailing list now.</div>
+    <button class="thanks__button">Ok</button>
+  </div>
+  <script>
+    window.onSubmitEmailForm = function (email) {
+      console.log('User submitted an email', email);
+    }
+  </script>
 </body>
 </html>

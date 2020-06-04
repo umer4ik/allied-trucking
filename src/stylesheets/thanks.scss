@@ -1,0 +1,44 @@
+.blocker {
+  background-color: rgba(#060e16, 0.5);
+  z-index: 10;
+}
+
+.thanks {
+  width: 317px;
+  height: 261px;
+  background: #4f5e6a;
+  border-radius: 0;
+  text-align: center;
+  color: #fff;
+  padding-top: 68px;
+
+  &__title {
+    font-size: 20px;
+  }
+
+  &__description {
+    font-size: 11px;
+    padding-top: 8px;
+  }
+
+  &__button {
+    margin-top: 22px;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    color: #fff;
+    display: inline-block;
+    background-color: transparent;
+    transition: all 400ms $easing;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+}

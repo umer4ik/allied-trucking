@@ -5,6 +5,7 @@ import isEmail from 'is-email';
 window.jQuery = $;
 window.$ = $;
 require('jquery.marquee');
+require('jquery-modal');
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms / 2));
 
@@ -93,17 +94,17 @@ $(document).ready(() => {
       startVisible: true,
     });
   } else {
-    $('[data-marquee="0"]').text('ALLIED TRUCKING');
+    $('[data-marquee="0"]').text($('title').attr('data-title'));
   }
   $('.table-link__show-hide').on('click', (e) => {
     $(e.currentTarget).toggleClass('table-link__show-hide--show');
     $(e.currentTarget).closest('.table-link').toggleClass('table-link--mobile-hover');
     $(e.currentTarget).prev().toggleClass('table-link__text--visible');
     if ($(e.currentTarget).hasClass('table-link__show-hide--show')) {
-      const text = 'About'; // $(e.currentTarget).parent().find('.table-link__footer').text();
+      const text = $(e.currentTarget).parent().find('.table-link__footer').text();
       $('.table__header-line').text(text);
     } else {
-      $('.table__header-line').text('ALLIED TRUCKING');
+      $('.table__header-line').text($('title').attr('data-title'));
     }
   });
 
@@ -137,8 +138,19 @@ $(document).ready(() => {
   input.on('blur', handleBlurState);
   $(form).on('submit', (e) => {
     const val = input.val();
-    if (!isEmail(val)) {
-      e.preventDefault();
+    e.preventDefault();
+    if (isEmail(val)) {
+      form
+        .removeClass(['form--invalid', 'form--valid']);
+      $('.thanks').modal({
+        fadeDuration: 200,
+        showClose: false,
+      });
+      input.val('');
+      input.blur();
+      if (window.onSubmitEmailForm) {
+        window.onSubmitEmailForm(val);
+      }
     }
   });
   function handleFormState() {
@@ -157,9 +169,13 @@ $(document).ready(() => {
     } else {
       form.removeClass('form--has-value form--valid form--invalid');
     }
+    form.removeClass('form--submitted');
   }
   handlePageScroll();
   handleBlurState();
   handleFormState();
   input.on('input', handleFormState);
+  $('.thanks__button').on('click', () => {
+    $.modal.close();
+  });
 });
